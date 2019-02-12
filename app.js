@@ -1,5 +1,11 @@
 'use strict';
 /////////////////////////////////////
+
+//TESTING GH WORKFLOW
+//TESTING GH WORKFLOW
+//TESTING GH WORKFLOW
+
+
 /* Problem 1 (this is your demo that we'll solve in class)
 Write a function called sum() that takes in two numbers as arguments and then returns an array where the first element is the sum of those numbers, and the second element is a concatenated string that EXACTLY follows this example and uses the values that were input into the function:
 
@@ -127,4 +133,5 @@ function multiplyAnyArray(dynamicArray) { //eslint-disable-line
 // Here is the test for multiplyArray(); uncomment it to run it
 // testMultiplyAnyArray(testDynamicArray);
 
-// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
+// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas
+
