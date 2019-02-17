@@ -53,7 +53,7 @@ IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this funct
 
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
 
-// Write your code here
+// Write your code here. LINE COMPLETE.
 function sumAndMultiply(a, b, c) { //eslint-disable-line
   var sum_of_A_B = sum(a, b)[0]; //11
   var sum_of_three = sum(sum_of_A_B, c)[0]; //16
@@ -85,12 +85,20 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
+  var end_sum = 0;
+  var i;
+  for (i= 0; i < sumArr.length; i++) {
+    end_sum += sumArr[i];
+  }
 
+  var sumArrayString = sumArr[0] + ',' + sumArr[1] + ',' + sumArr[2] + ' was passed in as an array of numbers, and '+ end_sum + ' is their sum.';
+
+  return [end_sum, sumArrayString]
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
