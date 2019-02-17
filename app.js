@@ -81,7 +81,7 @@ IMPORTANT DETAIL: You may not use the arithmetic operator + in this function. To
 
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumArray() function and see if the test passes.*/
 
-// Write your code here. LINE COMPLETE.
+// Write your code here
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
@@ -114,19 +114,11 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
-  var productMultArr = 1;
-  var i;
-  for (i = 1; i < multArr.length; i++) {
-    productMultArr *= i;
-  }
-  var multArrString = 'The numbers ' + multArr[0] + ',' + multArr[1] + ',' + multArr[2] + ' have a product of ' + productMultArr + '.';
 
-  console.log(productMultArr, multArrString);
-  return [productMultArr, multArrString];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-testMultiplyArray(testArray);
+// testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop.
 
