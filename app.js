@@ -93,7 +93,7 @@ function sumArray(sumArr) { //eslint-disable-line
 
   var sumArrayString = sumArr[0] + ',' + sumArr[1] + ',' + sumArr[2] + ' was passed in as an array of numbers, and '+ end_sum + ' is their sum.';
 
-  return [end_sum, sumArrayString]
+  return [end_sum, sumArrayString];
 }
 
 // Here is the test for sumArray(); uncomment it to run it
