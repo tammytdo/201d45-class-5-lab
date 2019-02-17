@@ -31,13 +31,14 @@ Write a function called multiply() that takes in two numbers as arguments and re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiply() function and see if the test passes.*/
 
 // Write your code here
-function multiply(a, b) { //eslint-disable-line
-  var resultProduct = a * b;
-  var resultString = 'The product of ' + a + ' and ' + 9 +' is ' + resultProduct + '.'
+function multiply(c, d) { //eslint-disable-line
+  var resultProduct = c * d;
+  var resultProductString = 'The product of ' + c + ' and ' + d +' is ' + resultProduct + '.';
+  return [resultProduct, resultProductString];
 }
 
 //Here is the test for multiply(); uncomment it to run it
-// testMultiply(5,9);
+testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -54,14 +55,15 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-  var sumAandB = sum(a, b);
-  // console.log(a, b, c);
-  console.log(sumAandB);
-  var productAandB = multiply(a, b);
-  // console.log(productAandB);
-  var sumString = a + ' and ' + b + ' and ' + c + ' sum to ' + sumAandB +'.'; 
-  var productString = 'The product of ' + a + ' and ' + b + ' and ' + b + ' is ' + productAandB + '.';
-  return [sumAandB, productAandB, sumString, productString];
+  var sum_of_A_B = sum(a, b)[0]; //11
+  var sum_of_three = sum(sum_of_A_B, c)[0]; //16
+  var sumThreeString = a + ' and ' + b + ' and ' + c + ' sum to ' + sum_of_three + '.';
+
+  var product_A_B = multiply(a, b)[0]; //45
+  var product_of_three = multiply(product_A_B, c)[0]; //225
+  var productThreeString = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + product_of_three + '.';
+
+  return [sum_of_three, product_of_three, sumThreeString, productThreeString];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
