@@ -115,6 +115,7 @@ IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
 
 // Write your code here
+function multiplyArray(multArr) { //eslint-disable-line
   var array_idx0 = multArr[0]; // 2
   var array_idx1 = multArr[1]; // 3
   var array_idx2 = multArr[2]; // 4
