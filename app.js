@@ -1,163 +1,112 @@
 'use strict';
-/////////////////////////////////////
-
-/* Problem 1 (this is your demo that we'll solve in class)
+/* Problem 1
 Write a function called sum() that takes in two numbers as arguments and then returns an array where the first element is the sum of those numbers, and the second element is a concatenated string that EXACTLY follows this example and uses the values that were input into the function:
 
-"The sum of 4 and 7 is 11."
+"The sum of 4 and 7 is 11." */
 
-Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSum() function below and check the console to see if the test passes.*/
-
-
-// Write your code here. LINE COMPLETE.
-function sum(a, b) { //eslint-disable-line
+function sum(a, b) {
   var resultSum = a + b;
   var resultString = 'The sum of '+ a + ' and ' + b + ' is ' + resultSum + '.';
   return [resultSum, resultString];
 }
 
-// Here is the test for sum(); uncomment it tdo run it. LINE COMPLETE.
 testSum(4, 7);
 
-// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question! 
-//ACP = Add, commit, push
-
-/////////////////////////////////////
 /* Problem 2
 Write a function called multiply() that takes in two numbers as arguments and returns an array where the first element is the product of those numbers, and the second element is a string that EXACTLY follows this example and uses the values that were input into the function:
 
-"The product of 5 and 9 is 45."
+"The product of 5 and 9 is 45." */
 
-Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiply() function and see if the test passes.*/
-
-// Write your code here
-function multiply(c, d) { //eslint-disable-line
+function multiply(c, d) {
   var resultProduct = c * d;
   var resultProductString = 'The product of ' + c + ' and ' + d +' is ' + resultProduct + '.';
   return [resultProduct, resultProductString];
 }
 
-//Here is the test for multiply(); uncomment it to run it
 testMultiply(5,9);
 
-// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
-
-/////////////////////////////////////
 /* Problem 3
 Write a function called sumAndMultiply() that takes in three numbers as separate arguments and returns an array where the first element is the sum of those three numbers, the second element is the product of those three numbers,  and the third and fourth elements are strings that EXACTLY follow this example and use the values that were input into the function:
 
 Third element: "4 and 7 and 5 sum to 16."
 Fourth element: "The product of 4 and 7 and 5 is 140."
 
-IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this function. To do addition, use your sum() function, and to do multiplication, use your multiply() function that you've already created. You're going to have to be resourceful to figure out how to do this. However, you may continue to use the + operator for string concatenation.
+IMPORTANT: Do not use the arithmetic operators + and * in this function. To do addition, use your sum() function, and to do multiplication, use your multiply() function that you've already created.*/
 
-Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
-
-// Write your code here. LINE COMPLETE.
-function sumAndMultiply(a, b, c) { //eslint-disable-line
-  var sum_of_A_B = sum(a, b)[0]; //11
-  var sum_of_three = sum(sum_of_A_B, c)[0]; //16
+function sumAndMultiply(a, b, c) {
+  var sum_of_A_B = sum(a, b)[0];
+  var sum_of_three = sum(sum_of_A_B, c)[0];
   var sumThreeString = a + ' and ' + b + ' and ' + c + ' sum to ' + sum_of_three + '.';
 
   var product_A_B = multiply(a, b)[0]; //45
-  var product_of_three = multiply(product_A_B, c)[0]; //225
+  var product_of_three = multiply(product_A_B, c)[0];
   var productThreeString = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + product_of_three + '.';
 
   return [sum_of_three, product_of_three, sumThreeString, productThreeString];
 }
 
-// Here is the test for sumAndMultiply(); uncomment it to run it
 testSumAndMultiply(4,7,5);
 
-// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
-
-/////////////////////////////////////
 /* Problem 4
 Write a function called sumArray() that takes in an array of numbers as its single argument and then returns an array where the first element is the sum of the numbers in the array, and the second element is a string that EXACTLY follows this example and uses the values that were input into the function:
 
 "2,3,4 was passed in as an array of numbers, and 9 is their sum."
 
-IMPORTANT DETAIL: You may not use the arithmetic operator + in this function. To do addition, use your sum() function that you've already created. You're going to have to be resourceful to figure out how to do this. However, you may continue to use the + operator for string concatenation.
+IMPORTANT: Do not use the arithmetic operator + in this function. To do addition, use your sum() function that you've already created. */
 
-Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumArray() function and see if the test passes.*/
-
-// Write your code here
-var testArray = [2, 3, 4]; //eslint-disable-line
-
-function sumArray(sumArr) { //eslint-disable-line
-  var array_idx0 = sumArr[0]; // 2
-  var array_idx1 = sumArr[1]; // 3
-  var array_idx2 = sumArr[2]; // 4
+function sumArray(sumArr) { 
+  var array_idx0 = sumArr[0];
+  var array_idx1 = sumArr[1];
+  var array_idx2 = sumArr[2];
 
   var sum_index_0_and_1 = sum(array_idx0, array_idx1)[0];
   var sum_index_0_1_and_3 = sum(sum_index_0_and_1, array_idx2)[0];
-
   
   var sumArrayString = sumArr[0] + ',' + sumArr[1] + ',' + sumArr[2] + ' was passed in as an array of numbers, and '+ sum_index_0_1_and_3 + ' is their sum.';
 
   return [sum_index_0_1_and_3, sumArrayString];
 }
 
-// Here is the test for sumArray(); uncomment it to run it
+var array = [2, 3, 4]; 
+testSumArray(array);
 
-testSumArray(testArray);
-
-// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
-
-/////////////////////////////////////
 /* Problem 5
 Write a function called multiplyArray() that takes an array of numbers as its argument and returns an array whose first element is the product of those numbers, and the second element is a string that EXACTLY follows this example and uses the values that were input into the function:
 
 "The numbers 2,3,4 have a product of 24."
 
-IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To do multiplication, use your multiply() function that you've already created. You're going to have to be resourceful to figure out how to do this. This function should handle an array containing three elements. However, you may continue to use the + operator for string concatenation.
+IMPORTANT: Do not use the arithmetic operator * in this function. To do multiplication, use your multiply() function that you've already created. You're going to have to be resourceful to figure out how to do this. This function should handle an array containing three elements. However, you may continue to use the + operator for string concatenation.*/
 
-Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
-
-// Write your code here
-function multiplyArray(multArr) { //eslint-disable-line
-  var array_idx0 = multArr[0]; // 2
-  var array_idx1 = multArr[1]; // 3
-  var array_idx2 = multArr[2]; // 4
+function multiplyArray(multArr) {
+  var array_idx0 = multArr[0];
+  var array_idx1 = multArr[1];
+  var array_idx2 = multArr[2];
 
   var mult_index_0_and_1 = multiply(array_idx0, array_idx1)[0];
   var mult_index_0_1_and_3 = multiply(mult_index_0_and_1, array_idx2)[0];
 
-  
   var multArrayString = 'The numbers ' + multArr[0] + ',' + multArr[1] +',' + multArr[2] + ' have a product of ' + mult_index_0_1_and_3 + '.';
   return [mult_index_0_1_and_3, multArrayString];
 }
+var array = [2, 3, 4]; 
+testMultiplyArray(array);
 
-// Here is the test for multiplyArray(); uncomment it to run it
-testMultiplyArray(testArray);
-
-// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop.
-
-// You're done! Submit the link to the repo following the instructions in Canvas. Or, try out the stretch goal below...
-
-// Don't forget to create a new branch for your work on the next question, if you attempt it.
-
-/////////////////////////////////////
-/* STRETCH GOAL: Problem 6
+/* Problem 6
 Write a function called multiplyAnyArray() that takes an array of numbers of any length as its argument and returns an array whose first element is the product of those numbers, and the second element is a string that EXACTLY follows this example and concatenates a message using the arguments that were passed into the function:
 
 "The numbers 1,2,3,4,5 have a product of 120."
 
-IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To do multiplication, use your multiply() function that you've already created. You're going to have to be resourceful to figure out how to do this. However, you may continue to use the + operator for string concatenation.
+IMPORTANT: Do not use the arithmetic operator * in this function. To do multiplication, use your multiply() function that you've already created. You're going to have to be resourceful to figure out how to do this. However, you may continue to use the + operator for string concatenation.
 
-This function should be dynamic, accepting an array of any length.
+This function should be dynamic, accepting an array of any length. */
 
-Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyAnyArray() function and see if the test passes.*/
-
-// Write your code here
-var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
-
-function multiplyAnyArray(dynamicArray) { //eslint-disable-line
-
+function multiplyAnyArray(dynamicArray) {
+  var resultProduct = dynamicArray.reduce(function(a, b){
+    return multiply(a, b)[0];
+  });
+  var resultString = 'The numbers ' + dynamicArray + ' have a product of ' + resultProduct + '.';
+  return [resultProduct, resultString];
 }
 
-// Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
-
-// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas
-
+var testDynamicArray = [1,2,3,4,5];
+testMultiplyAnyArray(testDynamicArray);
